@@ -1,0 +1,143 @@
+ 
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="IPSECU" />
+<meta name="Description" content="Users can calculate HDD space / storage time via IPSECU Disk Space Calculator according to different camera channel, resolution and bit rate settings." />
+<title>Video capacity Calculator</title>
+<SCRIPT language=JavaScript src="calculate_loc_2.js" type=text/javascript></SCRIPT>
+ 
+<body class="bj" oncontextmenu='return false' ondragstart='return false' onselectstart ='return false' onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'>
+<div id="outbox">
+<div class="top2">
+<div class="content">
+<div class="content_right">
+<div class="content_right_center">
+<div class="content_right_center_text">
+<table width="450" height="388" border="0" align="center">
+             
+              <tr>
+                <td colspan="7"><font face="Open Sans" size="2"><span>Chose</span></font></td>
+              </tr>
+              <tr>
+                <td width="35"></td>
+                <td colspan="6">
+                  <font size="1" face=""Open Sans">
+                  <input type="radio" name="method" value="th_time" onClick="choice(0)" checked="checked" /></font><font face="Open Sans" size="2">
+					</font><font size="2" face="Times New Roman">Recording Time Given
+                  </font><font face="Times New Roman" size="1">
+                  <input type="radio" name="method" value="th_space" onClick="choice(1)" /></font><font face="Times New Roman" size="2">
+                  Disk Space Given
+                  </font><font face="Times New Roman" size="1">
+                  <input type="radio" name="method" value="th_rate" onClick="choice(2)" /></font><font face="Times New Roman" size="2">
+                  Recording Time&Disk Space Given
+                </font>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="7">&nbsp;</td>
+              </tr>
+              <tr>
+                <td colspan="7"><font face="Open Sans" size="2"><span>Disk Calculation</span></font></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td width="66"><font face="Times New Roman" size="2">Bitrate:</font> </td>
+                <td width="190"><font size="1" face="Times New Roman">
+				<input type="text" name="bitrate" value="" class="input" size="10" /></font><font face="Times New Roman" size="2">
+                  Kbps</font></td>
+                <td colspan="2"><font face="Open Sans" size="2"><span>Disk Space:</span></font><font size="1">(Green is theoretical value, blue is manufacturer's value, red is actual value)</font></td>
+                <td width="17">&nbsp;</td>
+                <td width="9" rowspan="9">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td width="66"><font face="Times New Roman" size="2">Recording Time:</font></td>
+                <td><font size="1" face="Times New Roman">
+				<input type="text" value="" name="rectime_day" onFocus="timefocus(2)" class="input" size="10" /></font><font face="Times New Roman" size="2">
+                  days</font></td>
+                <td width="43"><font face="Times New Roman" color="green" size="2">1TB</font></td>
+                <td width="71" style="border:none;">
+				<font size="1" face="Times New Roman"><input type="text" id="ide" name="idesize" size="10" maxlength="10" /></font></td>
+                <td><font face="Times New Roman" size="2">pcs</font></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td width="66">&nbsp;</td>
+                <td><font size="1" face="Times New Roman">
+				<input type="text" value="" name="rectime_h" onFocus="timefocus(0)" class="input" size="10" /></font><font face="Times New Roman" size="2">
+                  Hours</font></td>
+                <td><font face="Times New Roman" color="green" size="2">2TB</font></td>
+                <td class="disk"><font size="1" face="Times New Roman"><input type="text" id="ide" name="idesize" size="10" maxlength="10" /></font></td>
+                <td><font face="Times New Roman" size="2">pcs</font></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td width="66">&nbsp;</td>
+                <td><font size="1" face="Times New Roman">
+				<input type="text" value="" name="rectime_m" onFocus="timefocus(1)" class="input" size="10" /></font><font face="Times New Roman" size="2">
+                  Minutes</font></td>
+                <td><font face="Times New Roman" color="green" size="2">3TB</font></td>
+                <td><font size="1" face="Times New Roman"><input type="text" id="ide" name="idesize" size="10" maxlength="10" /></font></td>
+                <td><font face="Times New Roman" size="2">pcs</font></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td width="66"><font face="Times New Roman" size="2">Disk Space:</font></td>
+                <td><font size="1" face="Times New Roman">
+				<input type="text" value="" name="recdisk_gb" onFocus="diskfocus(0)" class="input" size="10" /></font><font face="Times New Roman" size="2">
+                  GB</font></td>
+                <td><font face="Times New Roman" color="blue" size="2">  1TB</font></td>
+                <td><font size="1" face="Times New Roman"><input type="text" id="ide" name="idesize" size="10" maxlength="10" /></font></td>
+                <td><font face="Times New Roman" size="2">pcs</font></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td width="66">&nbsp;</td>
+                <td><font size="1" face="Times New Roman">
+				<input type="text" value="" name="recdisk_mb" onFocus="diskfocus(1)" class="input" size="10" /></font><font face="Times New Roman" size="2">
+                  MB</font></td>
+                <td><font face="Times New Roman" color="blue" size="2">  2TB</font></td>
+                <td><font size="1" face="Times New Roman"><input type="text" id="ide" name="idesize" size="10" maxlength="10" /></font></td>
+                <td><font face="Times New Roman" size="2">pcs</font></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td width="66">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><font face="Times New Roman" color="blue" size="2">  3TB</font></td>
+                <td><font size="1" face="Times New Roman"><input type="text" id="ide" name="idesize" size="10" maxlength="10" /></font></td>
+                <td><font face="Times New Roman" size="2">pcs</font></td>
+              </tr>
+              <tr>
+                <td colspan="2"><font face="Open Sans" size="2"><span>Channel Number:</span></font></td>
+                <td><font size="1" face="Times New Roman">
+				<input type="text" value="1" name="channel" onFocus="" class="input" size="10" /></font><font face="Times New Roman" size="2">
+                  chanel</font></td>
+                  <td><font face="Times New Roman" size="2"color="red" >  1TB<a href="" target=_blank>*</a></font></td>
+                <td><font size="1" face="Times New Roman"><input type="text" id="ide" name="idesize" size="10" maxlength="10" /></font></td>
+                <td><font face="Times New Roman" size="2">pcs</font></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td width="66">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td height="24" colspan="7" align="center"><font size="1"><input type="button" value="Calculate" name="calu" style="width:100px;" onClick="if(check()) {calulat();}" /></font><font size="2">
+				</font><font size="1">
+                    <input type="button" value="Clear" name="clear" style="width:100px;" onClick="return clearpara();" /></font></td>
+              </tr>
+          </table>
+</div>
+</div>
+</div>
+ 
+</div>
+</body>
+</html>
